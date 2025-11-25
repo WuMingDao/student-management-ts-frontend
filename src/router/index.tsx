@@ -5,6 +5,8 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: AppLayout,
+    // Routing protection
+    // errorElement
     children: [
       {
         index: true,
@@ -16,7 +18,8 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <Navigate to="score" replace /> },
           {
-            element: <></>,
+            // just show toolbar
+            // element: <></>,
             children: [
               {
                 path: "score",
@@ -24,7 +27,7 @@ export const router = createBrowserRouter([
               },
               {
                 path: "student",
-                element: <div>Student</div>,
+                lazy: () => import("../feature/student/StudentList"),
               },
             ],
           },

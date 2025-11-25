@@ -58,7 +58,9 @@ function NavBar() {
               <button className="btn">Score</button>
             </li>
             <li>
-              <button className="btn">Student</button>
+              <button className="btn" onClick={() => navigate("/home/student")}>
+                Student
+              </button>
             </li>
           </ul>
         </div>
