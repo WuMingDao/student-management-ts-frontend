@@ -5,10 +5,14 @@ export const Component = function Profile() {
     "https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
   );
 
-  function handAvatarChange(event: React.ChangeEvent<HTMLInputElement>) {
-    if (event.target.files) {
-      setAvatarUrl(URL.createObjectURL(event.target.files[0]));
-    }
+  function handleAvatarChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    const fileUrl = URL.createObjectURL(file);
+
+    setAvatarUrl(fileUrl);
   }
 
   return (
@@ -27,7 +31,7 @@ export const Component = function Profile() {
             id="input-avatar"
             type="file"
             accept="image/*"
-            onChange={handAvatarChange}
+            onChange={handleAvatarChange}
             className="hidden"
           />
 
