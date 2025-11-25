@@ -31,11 +31,11 @@ export const router = createBrowserRouter([
               },
             ],
           },
+          {
+            path: "profile",
+            lazy: () => import("../feature/user/Profile"),
+          },
         ],
-      },
-      {
-        path: "profile",
-        element: <div>profile</div>,
       },
 
       // Auth
