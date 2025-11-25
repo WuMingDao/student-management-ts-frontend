@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 function NavBar() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -55,10 +56,22 @@ function NavBar() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-4">
             <li>
-              <button className="btn">Score</button>
+              <button
+                className={`btn ${
+                  pathname === "/home/student" ? "btn-ghost" : ""
+                }`}
+                onClick={() => navigate("/home/score")}
+              >
+                Score
+              </button>
             </li>
             <li>
-              <button className="btn" onClick={() => navigate("/home/student")}>
+              <button
+                className={`btn ${
+                  pathname === "/home/score" ? "btn-ghost" : ""
+                }`}
+                onClick={() => navigate("/home/student")}
+              >
                 Student
               </button>
             </li>

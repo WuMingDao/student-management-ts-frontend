@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
             children: [
               {
                 path: "score",
-                element: <div>Score</div>,
+                lazy: () => import("../feature/score/ScoreList"),
               },
               {
                 path: "student",
