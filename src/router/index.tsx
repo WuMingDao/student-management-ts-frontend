@@ -44,11 +44,11 @@ export const router = createBrowserRouter([
         children: [
           {
             path: "login",
-            element: <div>login</div>,
+            lazy: () => import("../feature/auth/login"),
           },
           {
             path: "register",
-            element: <div>register</div>,
+            lazy: () => import("../feature/auth/Register"),
           },
         ],
       },
