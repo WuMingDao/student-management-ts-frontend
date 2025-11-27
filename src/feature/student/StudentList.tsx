@@ -19,14 +19,7 @@ export const Component = function StudentList() {
 
           <tbody>
             {studentListData.map((studentItem) => (
-              <>
-                <StudentListItem
-                  key={studentItem.id}
-                  studentItem={studentItem}
-                />
-
-                {/* <br /> */}
-              </>
+              <StudentListItem key={studentItem.id} studentItem={studentItem} />
             ))}
           </tbody>
         </table>
