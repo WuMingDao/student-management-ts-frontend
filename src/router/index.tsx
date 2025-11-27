@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
           { index: true, element: <Navigate to="score" replace /> },
           {
             // just show toolbar
-            // element: <></>,
+            lazy: () => import("../ui/HomeLayoutWithToolbar"),
             children: [
               {
                 path: "score",
@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
       // 404 Not found
       {
         path: "*",
-        element: <div>404</div>,
+        lazy: () => import("../ui/NotFound"),
       },
     ],
   },
