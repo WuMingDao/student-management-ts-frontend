@@ -1,8 +1,9 @@
 import { studentListMockData } from "../../services/apiStudent";
+import type { StudentType } from "../types/studentType";
 import StudentListItem from "./StudentListItem";
 
 export const Component = function StudentList() {
-  const studentListData = studentListMockData;
+  const studentListData: StudentType[] = studentListMockData;
 
   return (
     <div className="p-10">

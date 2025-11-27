@@ -1,4 +1,6 @@
-function StudentListItem({ studentItem }: { studentItem: any }) {
+import type { StudentType } from "../types/studentType";
+
+function StudentListItem({ studentItem }: { studentItem: StudentType }) {
   return (
     <>
       <tr>
