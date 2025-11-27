@@ -1,4 +1,13 @@
+import { getScoreList } from "../../services/apiScore";
+import { getStudentList } from "../../services/apiStudent";
+import type { ScoreType } from "../types/scoreType";
+import type { StudentType } from "../types/studentType";
+import ScoreListItem from "./ScoreListItem";
+
 export const Component = function ScoreList() {
+  const scoreListData: ScoreType[] = getScoreList();
+  const studentListData: StudentType[] = getStudentList();
+
   return (
     <>
       <div className="p-10">
@@ -15,19 +24,16 @@ export const Component = function ScoreList() {
                 <th></th>
               </tr>
             </thead>
-            <tr>
-              <td className="text-center text-xl">wumingdao</td>
-              <td className="text-center text-xl">Class 1 | Year 6</td>
-              <td className="text-center text-xl">Math</td>
-              <td className="text-center text-xl">Semester 1</td>
-              <td className="text-center text-xl">90</td>
-              <th className="text-center">
-                <div className="flex justify-center gap-3">
-                  <button className="btn btn-soft btn-info">Details</button>
-                  <button className="btn btn-soft btn-error">Delete</button>
-                </div>
-              </th>
-            </tr>
+
+            <tbody>
+              {scoreListData.map((scoreItem, index) => (
+                <ScoreListItem
+                  key={scoreItem.id}
+                  scoreItem={scoreItem}
+                  studentItem={studentListData[index]}
+                />
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
