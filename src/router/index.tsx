@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
       // 404 Not found
       {
         path: "*",
-        element: <div>404</div>,
+        lazy: () => import("../ui/NotFound"),
       },
     ],
   },
