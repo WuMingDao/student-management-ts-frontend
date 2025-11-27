@@ -70,3 +70,66 @@ export const studentListMockData = [
     avatar: "https://img.daisyui.com/images/profile/demo/5@94.webp",
   },
 ];
+
+export const scoreListMockData = [
+  {
+    id: 1,
+    subject: "Mathematics",
+    semester: "Fall 2023",
+    score: 85,
+  },
+  {
+    id: 2,
+    subject: "English",
+    semester: "Spring 2023",
+    score: 92,
+  },
+  {
+    id: 3,
+    subject: "Science",
+    semester: "Fall 2023",
+    score: 78,
+  },
+  {
+    id: 4,
+    subject: "History",
+    semester: "Spring 2023",
+    score: 88,
+  },
+  {
+    id: 5,
+    subject: "Physics",
+    semester: "Fall 2023",
+    score: 95,
+  },
+  {
+    id: 6,
+    subject: "Chemistry",
+    semester: "Spring 2023",
+    score: 82,
+  },
+  {
+    id: 7,
+    subject: "Biology",
+    semester: "Fall 2023",
+    score: 90,
+  },
+  {
+    id: 8,
+    subject: "Geography",
+    semester: "Spring 2023",
+    score: 80,
+  },
+  {
+    id: 9,
+    subject: "Literature",
+    semester: "Fall 2023",
+    score: 85,
+  },
+  {
+    id: 10,
+    subject: "Mathematics",
+    semester: "Spring 2023",
+    score: 91,
+  },
+];
